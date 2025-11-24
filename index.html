@@ -1,11 +1,169 @@
+// ...existing code...
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>はたさんのホームページ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --pink-1: #fff0f6;
+            --pink-2: #ffd6e8;
+            --pink-3: #ff9fcb;
+            --accent: #ff6fa3;
+            --card-bg: rgba(255,255,255,0.9);
+        }
+        html,body{
+            height:100%;
+            margin:0;
+            font-family: "Poppins", "Noto Sans JP", sans-serif;
+            background: linear-gradient(180deg, var(--pink-1) 0%, #fff7fb 50%, var(--pink-2) 100%);
+            color:#333;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+        .wrap{
+            min-height:100%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:48px 20px;
+        }
+        .card{
+            width:100%;
+            max-width:780px;
+            background:var(--card-bg);
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(255,105,150,0.12);
+            border:1px solid rgba(255,111,163,0.12);
+            padding:36px;
+            text-align:left;
+            position:relative;
+            overflow:hidden;
+        }
+        .sparkle{
+            position:absolute;
+            right:-60px;
+            top:-60px;
+            width:220px;
+            height:220px;
+            background: radial-gradient(circle at 30% 30%, rgba(255,111,163,0.12), transparent 30%),
+                        radial-gradient(circle at 70% 70%, rgba(255,159,203,0.08), transparent 30%);
+            transform:rotate(25deg);
+            pointer-events:none;
+        }
+        header{
+            display:flex;
+            align-items:center;
+            gap:18px;
+            margin-bottom:18px;
+        }
+        .avatar{
+            width:84px;
+            height:84px;
+            border-radius:50%;
+            background:linear-gradient(135deg,var(--pink-3),var(--accent));
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            font-size:36px;
+            box-shadow:0 6px 18px rgba(255,111,163,0.18), inset 0 -6px 18px rgba(255,255,255,0.08);
+            flex-shrink:0;
+        }
+        h1{
+            margin:0;
+            font-family: "Sawarabi Mincho", "Poppins", sans-serif;
+            font-weight:400;
+            font-size:26px;
+            color:var(--accent);
+        }
+        p.lead{
+            margin:6px 0 0 0;
+            color:#6a4a5a;
+            font-size:14px;
+        }
+        .content{
+            margin-top:22px;
+            font-size:16px;
+            line-height:1.8;
+            color:#5b3a48;
+        }
+        .tags{
+            margin-top:20px;
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+        }
+        .tag{
+            background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+            border:1px solid rgba(255,111,163,0.12);
+            color:var(--accent);
+            padding:8px 12px;
+            border-radius:999px;
+            font-weight:600;
+            font-size:13px;
+            box-shadow:0 4px 10px rgba(255,111,163,0.06);
+        }
+        footer{
+            margin-top:26px;
+            display:flex;
+            gap:12px;
+            align-items:center;
+        }
+        .btn{
+            background:var(--accent);
+            color:white;
+            padding:10px 16px;
+            border-radius:12px;
+            text-decoration:none;
+            font-weight:600;
+            box-shadow:0 8px 18px rgba(255,111,163,0.18);
+            border:none;
+            cursor:pointer;
+        }
+        .muted{
+            color:#a86b84;
+            font-size:14px;
+        }
+
+        @media (max-width:480px){
+            .card{ padding:20px; border-radius:16px; }
+            .avatar{ width:64px; height:64px; font-size:28px; }
+            h1{ font-size:20px; }
+        }
+    </style>
 </head>
 <body>
-    <h1>こんにちは！</h1>
-    <p>ここが私のホームページです。</p>
+    <div class="wrap">
+        <div class="card" role="main">
+            <div class="sparkle" aria-hidden="true"></div>
+
+            <header>
+                <div class="avatar">は</div>
+                <div>
+                    <h1>やっほー！はたです♡</h1>
+                    <p class="lead">見に来てくれてありがとう〜！ゆっくりしていってね。</p>
+                </div>
+            </header>
+
+            <div class="content">
+                <p>ここは私ののんびりホームページ。カフェ巡りや写真、おしゃれが大好き。</p>
+                <p>気ままに好きなことを書いていく予定だから、ふらっとまた遊びに来てね！</p>
+
+                <div class="tags" aria-hidden="true">
+                    <div class="tag">カフェ巡り ☕️</div>
+                    <div class="tag">写真 📸</div>
+                    <div class="tag">おしゃれ ✨</div>
+                </div>
+
+                <footer>
+                    <button class="btn">もっと見る</button>
+                    <div class="muted">更新: 2025年</div>
+                </footer>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
